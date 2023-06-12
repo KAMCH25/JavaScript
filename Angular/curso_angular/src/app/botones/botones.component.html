@@ -1,0 +1,42 @@
+<div>
+   <button class="btn btn-danger" (click)="test_color = 'text-danger'">Color Rojo</button>
+    <button class="btn btn-success mx-2" (click)="test_color = 'text-success'">Color Verde</button>
+    <button class="btn btn-primary " (click)="test_color = 'text-primary'">Color Azul</button>    
+</div>
+
+
+<h1 [class]="test_color">Texto que va a cambiar de Color </h1>
+
+<!-- _________________________________________________________________________________________ -->
+<div>
+    <button [class.disabled]= "button_disabled" class="btn btn-danger" (click)="test_color = 'text-danger'">Color Rojo</button>
+     <button [class.disabled]= "button_disabled" class="btn btn-success mx-2" (click)="test_color = 'text-success'">Color Verde</button>
+     <button [class.disabled]= "button_disabled" class="btn btn-primary " (click)="test_color = 'text-primary'">Color Azul</button>    
+ 
+</div>
+<h1 [class]="test_color">Boton para habilitar de deshabilitar botones de colores  </h1>
+
+<button class="btn btn-secondary" (click)="button_disabled = !button_disabled">
+    activar/Desactivar 
+</button>
+
+<!-- ____________________________________________________________________________________________---- -->
+
+<div>
+    <button [class]= "{
+        'disabled': button_disabled
+    }" class="btn btn-danger" (click)="test_color = 'text-danger'">Color Rojo</button>
+     <button [class]= "{
+        'disabled': button_disabled
+     }" class="btn btn-success mx-2" (click)="test_color = 'text-success'">Color Verde</button>
+     <button [class]= "{
+        'disabled': button_disabled
+     }" class="btn btn-primary " (click)="test_color = 'text-primary'">Color Azul</button>    
+ 
+</div>
+<h1 [class]="test_color">Boton para habilitar de deshabilitar de fomra diferente   </h1>
+
+<button class="btn btn-secondary" (click)="button_disabled = !button_disabled">
+    activar/Desactivar 
+</button>
+<!-- quedamos en 08  -->

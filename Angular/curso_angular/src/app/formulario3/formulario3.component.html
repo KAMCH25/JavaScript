@@ -1,0 +1,44 @@
+<div class="card">
+    <div class="card-body">
+        <form  [formGroup]="formUser" (ngSubmit)="procesar()">  <!-- posblementes no fucniones el metodo procesa proque utilizo dos fomras name una forma mas limpio el codigo y email mas larga  -->
+            <div class="mb-2">
+                <label class="form-label">
+                        Nombre
+                </label>
+
+                <input type="text" formControlName="name" class="form-control" placeholder="Por favor ingrese su nombre">
+                
+                <div class="alert alert-danger" [hidden]="name.valid || name.pristine  ">   <!-- codigo mas limpio si utilizamos el get que creamos  ts  -->
+                    El Nombre es Obligatorio
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">
+                        Email
+                </label>
+
+                <input type="email" formControlName="email" class="form-control" placeholder="Por favor ingrese su Correo ">
+                
+                <div class="alert alert-danger" [hidden]="formUser.get('email')?.valid || formUser.get('email')?.pristine">
+                    <span *ngIf="formUser.get('email')?.errors?.['required']">
+                        El Email es Obligatorio
+                    </span>
+                    <span *ngIf="formUser.get('email')?.errors?.['email']">
+                        El Email Debe ser Valido
+                    </span>
+                </div>
+
+            </div>
+        </form>
+
+        <button class="btn btn-primary" [disabled]="formUser.invalid">
+            Enviar
+        </button>
+    </div>
+</div>
+
+<!-- {{formUser.get('name')}}  llamos uno a uno en este caso el nombre  -->
+
+<!-- pendiente curso 19  -->
+

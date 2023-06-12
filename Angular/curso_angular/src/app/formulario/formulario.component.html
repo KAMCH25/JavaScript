@@ -1,0 +1,21 @@
+<input type="text" placeholder="Ingresa tu Nombre" class="form-control" #name>   <!-- #name es el nombre que le damos al imput  -->
+
+<button class="btn btn-primary mt-2" (click)="mostrar_en_consola(name.value)">
+    Morstrar en consola 
+</button>
+
+
+<div class="alert alert-primary mt-4 " *ngIf="openAlert; else mensaje"> <!-- *ngif para condicionar el div, para que se muestre o no el mensaje   -->
+   <P> Se ha enviado el menaje </P>   <!-- utilizamos else para condicion uno u otro  -->
+   <button class="btn btn-danger" (click)="openAlert = false">
+    x
+   </button>
+</div>
+
+<ng-template  #mensaje>  <!-- si la condicion no se cumple mostramos este mesaje   -->
+    <div  class="alert alert-danger mt-4">
+        Mensaje de prueba 
+    </div>
+</ng-template>
+
+
